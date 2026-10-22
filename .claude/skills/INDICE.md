@@ -6,6 +6,7 @@
 
 | Quiero… | Use |
 |---|---|
+| Abrir, crear o cerrar un proyecto | `/bibliotecario` |
 | Diseñar o continuar el estudio | `/arquitecto-investigacion` |
 | Montar el filtro, el bot o la encuesta en WhatsApp | `/kapso-encuestas-whatsapp` |
 | Diseñar el estímulo y codificar comentarios de redes | `/escucha-social` |
@@ -18,7 +19,7 @@
 ## Cadena de trabajo
 
 ```
-10 arquitecto-investigacion → 20 kapso-encuestas-whatsapp → 30 escucha-social → 31 scraping-apify → 40 arquetipos-sistemicos → 50 microdrama-adictivo → 60 claqueta-brief
+05 bibliotecario → 10 arquitecto-investigacion → 20 kapso-encuestas-whatsapp → 30 escucha-social → 31 scraping-apify → 40 arquetipos-sistemicos → 50 microdrama-adictivo → 60 claqueta-brief
                     ↑ 30 alimenta de vuelta a 10 (hallazgos triangulados)
 ```
 
@@ -27,6 +28,7 @@
 | # | Comando | Familia | Versión | Estado | Entra | Sale | Siguiente |
 |---|---|---|---|---|---|---|---|
 | 00 | `/skills` | 00 · Menú | 1.0 | estable | lo que el usuario quiere hacer | la skill sugerida y su siguiente paso | — |
+| 05 | `/bibliotecario` | 05 · Biblioteca | 1.0 | prueba | lo que el usuario quiere trabajar (proyecto nuevo o existente) | carpeta del proyecto ordenada, index.md y proyectos/INDICE.md al día, nota del día | 10-arquitecto |
 | 10 | `/arquitecto-investigacion` | 10 · Diseño | 4.0 | estable | decisión de negocio, evidencia, archivos del proyecto | DASHBOARD.md, BITACORA.md, INSTRUMENTOS.md aprobados | 20-campo-kapso |
 | 20 | `/kapso-encuestas-whatsapp` | 20 · Campo | 1.0 | estable | instrumentos aprobados (filtro, bot, encuesta) | flujos y nodos de Kapso para WhatsApp | 30-escucha-social |
 | 30 | `/escucha-social` | 30 · Escucha | 0.1 | prueba | capítulo publicado con su ficha (constructo, pregunta en pantalla, códigos) | base de comentarios codificada y lectura por constructo | 31-scraping-apify |
@@ -37,6 +39,6 @@
 
 ## Para agregar una skill
 
-1. Cree `.claude/skills/NN-nombre/SKILL.md` (NN = familia: 10 diseño · 20 campo · 30-39 escucha · 40 personajes · 50 contenido · 60 producción).
+1. Cree `.claude/skills/NN-nombre/SKILL.md` (NN = familia: 05 biblioteca · 10 diseño · 20 campo · 30-39 escucha · 40 personajes · 50 contenido · 60 producción).
 2. Llene la ficha: `name`, `description`, `familia`, `version`, `entra`, `sale`, `siguiente`, `estado`.
 3. Corra `python3 herramientas/indexar_skills.py`.

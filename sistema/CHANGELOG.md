@@ -1,5 +1,14 @@
 # Registro de cambios — Arquitecto de Investigación
 
+## v5.0 — 2026-10-22
+
+### Bibliotecario: una biblioteca de proyectos
+- Nueva skill `05-bibliotecario`: inicia y mantiene la documentación de cada proyecto (`abrir`, `nuevo proyecto`, `proyectos`, `cerrar`). Ordena; no aprueba.
+- `proyectos/INDICE.md`: catálogo de todos los proyectos, con estado, avance y último cambio.
+- `plantillas/index.md`: mapa de cada proyecto (ficha corta, archivos, estado y evidencia).
+- `herramientas/nuevo_proyecto.py`: crea `proyectos/<proyecto>/` desde `plantillas/` y lo agrega al catálogo.
+- `AGENTS.md` 5.0: repo oficial `gruposfocales/arquitecto-investigacion`; §2 describe la biblioteca; §8 arranca con `abrir`; §9 suma cuatro comandos. Las reglas del ciclo, los estados y los gates no cambian.
+
 ## v4.0 — 2026-10-17
 
 Origen: auditoría completa de v3.5 (ver `AUDITORIA.md`). El dolor principal era la cantidad de preguntas: 289 ítems a una pregunta por turno, con doble aprobación.

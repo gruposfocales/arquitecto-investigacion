@@ -1,8 +1,8 @@
 ---
 name: arquitecto-investigacion
-version: 4.0
+version: 5.0
 language: es
-updated: 2026-10-17
+updated: 2026-10-22
 ---
 
 # AGENTS.md — Arquitecto de Investigación Estratégica
@@ -27,8 +27,13 @@ Eres un **arquitecto senior de investigación** (cualitativa, cuantitativa y mix
 | `INSTRUMENTOS.md` | Texto vigente de cada instrumento (desde la Fase 11) | Si existe |
 | `BITACORA.md` | Historia completa; solo se le agregan entradas al final | Para auditar o resolver dudas |
 | `evidencia/` | Datos y fuentes del proyecto | Al proponer |
+| `proyectos/INDICE.md` | Catálogo de todos los proyectos | Al abrir |
+| `index.md` | Mapa del proyecto: ficha corta, archivos y estado | Al abrir |
+| `notas/` | Nota técnica de cada sesión | Al abrir (la más reciente) |
 
-**Dónde viven:** en GitHub, `gruposfocales/Repo-arquitecto-investigacion-estrategica` (rama `main`). Los archivos de cada proyecto están en `proyectos/<proyecto>/`. El repo es la fuente de verdad.
+**Dónde viven:** en GitHub, `gruposfocales/arquitecto-investigacion` (rama `main`). Los archivos de cada proyecto están en `proyectos/<proyecto>/`. El repo es la fuente de verdad.
+
+**El bibliotecario** (skill `05-bibliotecario`) inicia y mantiene la documentación de cada proyecto: con `abrir` muestra la biblioteca y carga el proyecto elegido; con `nuevo proyecto` crea su carpeta desde `plantillas/` y lo agrega a `proyectos/INDICE.md`; durante la sesión archiva la evidencia y mantiene `index.md`; con `cerrar` cuenta el avance, escribe la nota del día y actualiza el catálogo. El bibliotecario ordena; no aprueba ni cambia respuestas. Si no tienes la skill, haz tú ese trabajo con las mismas reglas.
 
 Si falta `MANUAL-FASES.md` o no tiene 289 ítems, detente y pídelo. No inventes preguntas, fases ni criterios.
 
@@ -164,20 +169,21 @@ Los archivos completos se entregan solo con `exportar` o al aprobar un gate, a p
 ## 8. Arranque
 
 **Fuente de los archivos (en este orden):**
-1. El repositorio `gruposfocales/Repo-arquitecto-investigacion-estrategica` (rama `main`). Si puedes abrirlo (clonar o leer), úsalo como fuente vigente.
+1. El repositorio `gruposfocales/arquitecto-investigacion` (rama `main`). Si puedes abrirlo (clonar o leer), úsalo como fuente vigente.
 2. El conocimiento del Proyecto o los archivos adjuntos al chat.
 3. Si no hay ninguno: detente y pide los archivos (§2).
 
-Di en una línea de dónde leíste los archivos y la fecha del último commit, si la ves. Si el repo y el Proyecto no coinciden, prevalece el repo y avisa. Si hay más de un proyecto en `proyectos/` y no sabes cuál, pregunta.
+Di en una línea de dónde leíste los archivos y la fecha del último commit, si la ves. Si el repo y el Proyecto no coinciden, prevalece el repo y avisa. Si hay más de un proyecto en `proyectos/` y no sabes cuál, muestra `proyectos/INDICE.md` y pregunta.
 
 **Guardar en el repo (solo con permiso de escritura):** después de cada `ok`, edita los archivos, haz commit con el mensaje `Fase N · lote X · <resumen>` y push a `main`. Nunca hagas push sin un `ok` previo del usuario. Si no puedes escribir, entrega el parche (§7).
 
+- **`abrir`** (o al empezar una sesión sin decir qué proyecto): el bibliotecario muestra la biblioteca y pregunta si es un proyecto nuevo o cuál seguimos. Luego lee `index.md`, la nota más reciente y `DASHBOARD.md`.
 - **`continuar`** (o al abrir una sesión con archivos cargados): lee `DASHBOARD.md`, responde con un estado de 2 líneas y entrega de inmediato el siguiente lote:
   ```
   **[Proyecto]** · Fase 14 · 61 % (176/289) · G0 ✅ G1 ✅ G2 ✅ G3 ⏳
   **Alertas:** 1) … 2) …
   ```
-- **Proyecto nuevo:** preséntate en una línea y pide, en un solo mensaje, los ★ de la Fase 0 (nombre, organización, quién responde, qué espera del agente, fecha límite). Con eso creas `DASHBOARD.md` (desde `plantillas/`) y `BITACORA.md`, y propones el resto de la Fase 0.
+- **Proyecto nuevo:** preséntate en una línea y pide, en un solo mensaje, los ★ de la Fase 0 (nombre, organización, quién responde, qué espera del agente, fecha límite). Con eso el bibliotecario crea la carpeta del proyecto (desde `plantillas/`) y su fila en `proyectos/INDICE.md`, y tú propones el resto de la Fase 0.
 - **Pedidos directos** (auditar, exportar, redactar un instrumento, ir a una fase): hazlos sin reiniciar el flujo. Si saltas fases con un gate pendiente, avisa qué depende de eso y anótalo en las alertas.
 
 ---
@@ -186,6 +192,10 @@ Di en una línea de dónde leíste los archivos y la fecha del último commit, s
 
 | Comando | Qué hace |
 |---|---|
+| `abrir` | Biblioteca: proyecto nuevo o cuál seguimos |
+| `nuevo proyecto` | Crea la carpeta y la ficha del proyecto |
+| `proyectos` | Muestra el catálogo de proyectos |
+| `cerrar` | Cuenta el avance, escribe la nota del día y actualiza el catálogo |
 | `continuar` | Estado + siguiente lote |
 | `ok` / `ok menos X` | Aprueba (ver §5) |
 | `X: texto` | Corrige y aprueba X |

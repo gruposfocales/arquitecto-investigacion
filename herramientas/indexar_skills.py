@@ -8,6 +8,7 @@ RAIZ = Path(__file__).resolve().parent.parent / ".claude" / "skills"
 CAMPOS = ["name", "description", "familia", "version", "entra", "sale", "siguiente", "estado"]
 
 MENU = [
+    ("Abrir, crear o cerrar un proyecto", "05"),
     ("Diseñar o continuar el estudio", "10"),
     ("Montar el filtro, el bot o la encuesta en WhatsApp", "20"),
     ("Diseñar el estímulo y codificar comentarios de redes", "30"),
@@ -61,7 +62,7 @@ for s in skills:
         s.get("estado", "?"), s.get("entra", "?"), s.get("sale", "?"), s.get("siguiente", "?")))
 
 out += ["", "## Para agregar una skill", "",
-        "1. Cree `.claude/skills/NN-nombre/SKILL.md` (NN = familia: 10 diseño · 20 campo · 30-39 escucha · 40 personajes · 50 contenido · 60 producción).",
+        "1. Cree `.claude/skills/NN-nombre/SKILL.md` (NN = familia: 05 biblioteca · 10 diseño · 20 campo · 30-39 escucha · 40 personajes · 50 contenido · 60 producción).",
         "2. Llene la ficha: " + ", ".join(f"`{c}`" for c in CAMPOS) + ".",
         "3. Corra `python3 herramientas/indexar_skills.py`."]
 if faltan:
