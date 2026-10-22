@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>[hidden]{display:none!important}body{margin:0}</style>
+<title>Sesión Observatorio Vejez</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: una diapositiva a pantalla, cabecera con fase y avance, pie de navegación; índice lateral desplegable */
+:root{
+  --bg:#F3F5F7; --surface:#FFFFFF; --ink:#16233B; --muted:#5C6A80; --line:#DCE2EA;
+  --accent:#E09A1A; --accent-ink:#5A3A00; --teal:#1E8571; --teal-soft:#E2F2EE; --sel:#FFF4DF;
+  --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body:"Figtree", "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1726; --surface:#172238; --ink:#EEF2F8; --muted:#9AA8BD; --line:#2A3853;
+  --accent:#F2B13E; --accent-ink:#2B1B00; --teal:#4CC3A8; --teal-soft:#16332F; --sel:#3A2D12; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1726; --surface:#172238; --ink:#EEF2F8; --muted:#9AA8BD; --line:#2A3853;
+  --accent:#F2B13E; --accent-ink:#2B1B00; --teal:#4CC3A8; --teal-soft:#16332F; --sel:#3A2D12; color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+.app{height:100%;display:grid;grid-template-rows:auto 1fr auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:flex;align-items:center;gap:12px;padding-block:14px;border-bottom:1px solid var(--line)}
+.brand{font-family:var(--display);font-weight:700;font-size:15px;white-space:nowrap}
+.brand small{display:block;font-family:var(--body);font-weight:500;font-size:12px;color:var(--muted)}
+.prog{flex:1;min-width:60px;height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.prog i{display:block;height:100%;background:var(--teal);transition:width .3s}
+.count{font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted);white-space:nowrap}
+.btn{font:600 14px var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:9px 14px;cursor:pointer}
+.btn:hover{border-color:var(--teal)}
+.btn:focus-visible,.opt:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+main{overflow:auto;display:flex;align-items:flex-start;justify-content:center;padding-block:clamp(20px,5vh,56px)}
+.slide{width:100%;max-width:880px;display:grid;gap:22px;animation:in .35s ease}
+@keyframes in{from{transform:translateY(8px)}to{transform:none}}
+@media (prefers-reduced-motion:reduce){.slide{animation:none}.prog i{transition:none}}
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--teal)}
+.chip b{background:var(--teal-soft);color:var(--teal);border-radius:6px;padding:2px 8px;letter-spacing:.02em}
+h1,h2{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.08}
+h1{font-size:clamp(34px,6vw,60px);font-weight:700}
+h2{font-size:clamp(28px,4.6vw,46px);font-weight:700}
+.lead{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:62ch;margin:0}
+.decided{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.dec{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.dec span{display:block;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.dec p{margin:0;font-weight:500}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.opt{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;background:var(--surface);color:var(--ink);border:2px solid var(--line);border-radius:16px;padding:16px;cursor:pointer;font:500 16px var(--body);transition:transform .15s,border-color .15s}
+.opt:hover{transform:translateY(-2px);border-color:var(--teal)}
+.opt .em{font-size:30px;line-height:1}
+.opt small{color:var(--muted);font-size:13px}
+.opt[aria-pressed="true"]{border-color:var(--accent);background:var(--sel)}
+.scale{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.scale .opt{align-items:center;text-align:center;padding:14px 6px}
+.scale-ends{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+textarea{width:100%;box-sizing:border-box;min-height:130px;resize:vertical;font:500 18px/1.5 var(--body);color:var(--ink);background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:16px}
+.starter{font-family:var(--display);font-size:20px;color:var(--accent-ink);background:var(--sel);border-radius:10px;padding:4px 10px;justify-self:start}
+.note{display:grid;gap:6px}
+.note label{font-size:13px;color:var(--muted)}
+.note textarea{min-height:64px;font-size:15px}
+.saved{font-size:13px;color:var(--teal);min-height:20px}
+footer{display:flex;gap:10px;align-items:center;justify-content:space-between;padding-block:12px;border-top:1px solid var(--line);flex-wrap:wrap}
+footer .grp{display:flex;gap:8px;flex-wrap:wrap}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(380px,100%);background:var(--surface);border-left:1px solid var(--line);box-shadow:-12px 0 40px rgba(0,0,0,.15);overflow:auto;padding:calc(16px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 24px 20px;z-index:5;box-sizing:border-box}
+.drawer h3{font-family:var(--display);margin:4px 0 10px}
+.drawer ol{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.drawer li button{all:unset;cursor:pointer;display:flex;gap:10px;width:100%;box-sizing:border-box;padding:8px 10px;border-radius:8px;font-size:14px}
+.drawer li button:hover,.drawer li button.cur{background:var(--teal-soft)}
+.drawer .ph{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:12px 10px 4px}
+.dot{width:10px;height:10px;border-radius:50%;border:2px solid var(--line);flex:none;margin-top:5px}
+.dot.ok{background:var(--teal);border-color:var(--teal)}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;z-index:6}
+.status{font-size:12px;color:var(--muted)}
+@media (max-width:560px){.brand small{display:none}.opt .em{font-size:24px}.hide-sm{display:none}}
+</style>
+
+<div class="app">
+  <header>
+    <div class="brand">Observatorio Vejez<small>Sesión con cliente · GruposFocales.com</small></div>
+    <div class="prog" aria-hidden="true"><i id="bar"></i></div>
+    <span class="count" id="count"></span>
+    <button class="btn" id="openIdx" aria-controls="drawer">Índice</button>
+  </header>
+  <main><section class="slide" id="slide" aria-live="polite"></section></main>
+  <footer>
+    <div class="grp"><button class="btn" id="prev">← Anterior</button><button class="btn primary" id="next">Siguiente →</button></div>
+    <div class="grp"><span class="status" id="status">Guardando en este navegador</span><button class="btn" id="copy">Copiar respuestas</button></div>
+  </footer>
+</div>
+<aside class="drawer" id="drawer" hidden>
+  <div style="display:flex;justify-content:space-between;align-items:center"><h3>Recorrido</h3><button class="btn" id="closeIdx">Cerrar</button></div>
+  <ol id="idx"></ol>
+</aside>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const S = [
+ {t:"cover", ph:"Inicio", title:"¿Cómo se prepara Colombia para su vejez?", lead:"Hoy repasamos lo que ya decidimos y le pedimos su voz en lo que falta. No hay respuestas correctas: queremos su mirada."},
+ {t:"phase", ph:"Lo decidido", title:"El punto de partida", items:[
+   ["Proyecto","Observatorio de Preparación Económica para la Vejez"],
+   ["La gran pregunta","¿Por qué unas personas se preparan para su vejez y otras se resignan?"],
+   ["El contexto","Ley 2381 en pausa, 55 % de informalidad y mucho cuidado no pagado"],
+   ["Lo que buscamos","Perfiles de personas que sirvan a gobierno, empresas y comunidad"]]},
+ {t:"q", ph:"Lo decidido", id:"audiencias", kind:"multi", q:"¿Para quién debe ser útil este Observatorio?", hint:"Puede elegir varias.", opts:[
+   ["🏛️","Gobierno y cooperación"],["🏢","Empresas y bancos"],["📣","Agencias y desarrolladores de IA"],["🤝","Comunidades y colectivos"]]},
+ {t:"q", ph:"Lo decidido", id:"motor", kind:"one", q:"¿Qué es primero para usted?", opts:[
+   ["🌱","Crear comunidad","Escuchar tendencias y sumar gente"],["💼","Generar negocio","Asesorías y estudios por encargo"],["⚖️","Las dos a la vez",""]]},
+ {t:"phase", ph:"Lo decidido", title:"Cómo lo vamos a estudiar", items:[
+   ["Primero","Datos oficiales del DANE para saber dónde buscar"],
+   ["Después","Bot en WhatsApp, grupos focales, familias y un podcast"],
+   ["A quién","Personas de 25 años o más, en ciudad y campo"],
+   ["Cuántos","18 grupos de personas, de 8 a 10 charlas por grupo"],
+   ["Cómo los encontramos","Anuncios en redes sociales"],
+   ["Regla de oro","Que participar sea divertido"]]},
+ {t:"q", ph:"La charla con el bot", id:"tono", kind:"one", q:"¿Cómo debería hablar el bot?", opts:[
+   ["😊","Como un amigo"],["🧑‍💼","Como un asesor"],["🎲","Como un juego"],["☕","Como en un café"]]},
+ {t:"q", ph:"La charla con el bot", id:"duracion", kind:"one", q:"¿Cuánto tiempo aguanta la gente?", opts:[
+   ["⚡","10 minutos"],["⏱️","20 minutos"],["🕰️","30 minutos"],["📅","Por partes, en varios días"]]},
+ {t:"q", ph:"La charla con el bot", id:"diversion", kind:"multi", q:"¿Qué lo haría divertido?", hint:"Elija todas las que le gusten.", opts:[
+   ["🏅","Puntos y medallas"],["🎭","Personajes con historias"],["🎙️","Responder con audios"],["😂","Stickers y memes"],["🪞","Recibir “tu perfil” al final"]]},
+ {t:"q", ph:"La charla con el bot", id:"palabras", kind:"open", q:"¿Qué palabra no deberíamos usar con la gente?", starter:"Nunca digan…"},
+ {t:"q", ph:"Para qué sirve", id:"decision", kind:"open", q:"¿Qué decisión suya cambiaría con estos resultados?", starter:"Con esto yo podría…"},
+ {t:"q", ph:"Cómo leemos los datos", id:"primero", kind:"one", q:"¿Qué quiere ver primero?", opts:[
+   ["👥","Perfiles de personas"],["🔢","Cifras clave"],["📖","Historias reales"],["🧭","Recomendaciones"]]},
+ {t:"q", ph:"Cómo leemos los datos", id:"certeza", kind:"scale", q:"¿Qué tan seguro necesita estar antes de actuar?", ends:["Me basta una pista","Necesito certeza total"], opts:[["🙂","1"],["😐","2"],["🤔","3"],["🧐","4"],["🔬","5"]]},
+ {t:"q", ph:"El trabajo de campo", id:"incentivo", kind:"one", q:"¿Qué haría que la gente participe?", opts:[
+   ["📱","Recarga de celular"],["🛒","Bono de compra"],["🎁","Un sorteo"],["📊","Su propio informe de preparación"],["👂","Solo ser escuchada"]]},
+ {t:"q", ph:"El trabajo de campo", id:"acompana", kind:"open", q:"¿Quién de su equipo nos acompaña?", starter:"La persona es…"},
+ {t:"q", ph:"Cuidar a la gente", id:"voz", kind:"one", q:"¿Podemos grabar la voz de quien participa?", opts:[
+   ["✅","Sí, con permiso"],["✍️","Solo texto"],["🔀","Depende del caso"]]},
+ {t:"q", ph:"Cuidar a la gente", id:"acceso", kind:"multi", q:"¿Quién puede ver las respuestas, sin nombres?", opts:[
+   ["🔒","Solo el equipo de investigación"],["🤝","Su organización"],["🌍","El público, en resumen"]]},
+ {t:"q", ph:"Cuidar a la gente", id:"prohibido", kind:"open", q:"¿Hay algo que nunca debemos preguntar?", starter:"No pregunten…"},
+ {t:"q", ph:"Tiempo y recursos", id:"cuando", kind:"one", q:"¿Cuándo necesita los primeros resultados?", opts:[
+   ["🚀","En 1 mes"],["🗓️","En 3 meses"],["🌗","En 6 meses"],["🔁","De forma continua"]]},
+ {t:"q", ph:"Tiempo y recursos", id:"presupuesto", kind:"open", q:"¿Hay un presupuesto de referencia?", starter:"Contamos con…"},
+ {t:"q", ph:"Lo que entregamos", id:"formatos", kind:"multi", q:"¿En qué formato le sirve más?", opts:[
+   ["📄","Informe"],["📈","Dashboard"],["✍️","Blog"],["🗂️","Fichas de perfiles"],["🎧","Podcast"],["🛠️","Taller con su equipo"]]},
+ {t:"q", ph:"Lo que entregamos", id:"exito", kind:"open", q:"¿Cómo sabremos que funcionó?", starter:"Sabremos que funcionó si…"},
+ {t:"q", ph:"Riesgos", id:"miedo", kind:"one", q:"¿Qué le preocupa más?", opts:[
+   ["👵","Que no participen los mayores"],["🌾","Que no lleguemos al campo"],["⚖️","Que la ley cambie"],["🎭","Que la gente no diga la verdad"],["💸","El presupuesto"]]},
+ {t:"q", ph:"Riesgos", id:"apetito", kind:"scale", q:"¿Cuánto riesgo está dispuesto a correr?", ends:["Prudente","Audaz"], opts:[["🐢","1"],["🚶","2"],["🚴","3"],["🏃","4"],["🚀","5"]]},
+ {t:"q", ph:"Cierre", id:"aprueba", kind:"open", q:"¿Quién debe aprobar el resultado final?", starter:"Lo aprueba…"},
+ {t:"q", ph:"Cierre", id:"claridad", kind:"scale", q:"¿Qué tan claro le quedó el proyecto hoy?", ends:["Nada claro","Clarísimo"], opts:[["😵","1"],["😕","2"],["🙂","3"],["😃","4"],["🤩","5"]]},
+ {t:"end", ph:"Cierre", title:"Gracias por su voz", lead:"Sus respuestas quedan guardadas. Las sumamos al proyecto y le contamos qué cambia."}
+];
+
+let cur = 0, A = {}, db = null;
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const QS = S.filter(s => s.t === "q");
+
+try { A = JSON.parse(localStorage.getItem("obs-resp") || "{}"); } catch (e) { A = {}; }
+try { const h = parseInt(localStorage.getItem("obs-cur")); if (h >= 0 && h < S.length) cur = h; } catch (e) {}
+
+function answered(s){ const a = A[s.id]; return a && ((a.v && a.v.length) || (a.c && a.c.trim())); }
+
+function render(){
+  const s = S[cur], el = $("slide");
+  let h = `<span class="chip"><b>${esc(s.ph)}</b></span>`;
+  if (s.t === "cover" || s.t === "end") {
+    h += `<h1>${esc(s.title)}</h1><p class="lead">${esc(s.lead)}</p>`;
+    if (s.t === "end") { const n = QS.filter(answered).length; h += `<p class="lead"><strong>${n} de ${QS.length}</strong> preguntas respondidas.</p>`; }
+  } else if (s.t === "phase") {
+    h += `<h2>${esc(s.title)}</h2><div class="decided">${s.items.map(([k,v]) => `<div class="dec"><span>${esc(k)}</span><p>${esc(v)}</p></div>`).join("")}</div>`;
+  } else {
+    const a = A[s.id] || {v:[], c:""};
+    h += `<h2>${esc(s.q)}</h2>`;
+    if (s.hint) h += `<p class="lead">${esc(s.hint)}</p>`;
+    if (s.kind === "open") {
+      h += `<span class="starter">${esc(s.starter)}</span><textarea id="open-${s.id}" placeholder="Escriba aquí, con sus palabras">${esc(a.c||"")}</textarea>`;
+    } else {
+      const cls = s.kind === "scale" ? "scale" : "opts";
+      h += `<div class="${cls}" role="group" aria-label="Opciones">` + s.opts.map((o,i) =>
+        `<button class="opt" data-i="${i}" aria-pressed="${(a.v||[]).includes(o[1])}"><span class="em" aria-hidden="true">${o[0]}</span>${s.kind==="scale"?"":esc(o[1])}${o[2]?`<small>${esc(o[2])}</small>`:""}</button>`).join("") + `</div>`;
+      if (s.kind === "scale") h += `<div class="scale-ends"><span>${esc(s.ends[0])}</span><span>${esc(s.ends[1])}</span></div>`;
+      h += `<div class="note"><label for="c-${s.id}">¿Algo más que quiera agregar?</label><textarea id="c-${s.id}" placeholder="Opcional">${esc(a.c||"")}</textarea></div>`;
+    }
+    h += `<div class="saved" id="saved"></div>`;
+  }
+  el.innerHTML = h;
+  el.style.animation = "none"; void el.offsetWidth; el.style.animation = "";
+  $("bar").style.width = ((cur) / (S.length - 1) * 100) + "%";
+  $("count").textContent = `${cur + 1} / ${S.length}`;
+  $("prev").disabled = cur === 0; $("next").textContent = cur === S.length - 1 ? "Volver al inicio" : "Siguiente →";
+  if (s.t === "q") wire(s);
+  try { localStorage.setItem("obs-cur", cur); } catch (e) {}
+  if (!$("drawer").hidden) idx();
+}
+
+function wire(s){
+  document.querySelectorAll(".opt").forEach(b => b.onclick = () => {
+    const o = s.opts[+b.dataset.i][1], a = A[s.id] || {v:[], c:""};
+    let v = a.v || [];
+    if (s.kind === "multi") v = v.includes(o) ? v.filter(x => x !== o) : [...v, o];
+    else v = v.includes(o) ? [] : [o];
+    save(s, {v, c:a.c || ""});
+    document.querySelectorAll(".opt").forEach(x => x.setAttribute("aria-pressed", v.includes(s.opts[+x.dataset.i][1])));
+  });
+  const t = $(s.kind === "open" ? "open-" + s.id : "c-" + s.id);
+  let timer;
+  t.oninput = () => { clearTimeout(timer); timer = setTimeout(() => { const a = A[s.id] || {v:[]}; save(s, {v:a.v||[], c:t.value}); }, 600); };
+}
+
+function save(s, val){
+  A[s.id] = val;
+  try { localStorage.setItem("obs-resp", JSON.stringify(A)); } catch (e) {}
+  const mark = $("saved");
+  if (db) {
+    db.collection("respuestas").doc(s.id).set({pregunta:s.q, tema:s.ph, valor:val.v, comentario:val.c, actualizado:new Date().toISOString()})
+      .then(() => { if (mark) mark.textContent = "✓ Guardado"; })
+      .catch(() => { if (mark) mark.textContent = "Guardado solo en este navegador"; });
+  } else if (mark) mark.textContent = "✓ Guardado en este navegador";
+}
+
+function idx(){
+  let h = "", last = "";
+  S.forEach((s, i) => {
+    if (s.ph !== last) { h += `<li class="ph">${esc(s.ph)}</li>`; last = s.ph; }
+    const label = s.t === "q" ? s.q : s.title;
+    const dot = s.t === "q" ? `<span class="dot ${answered(s) ? "ok" : ""}"></span>` : `<span class="dot" style="opacity:.3"></span>`;
+    h += `<li><button data-i="${i}" class="${i===cur?"cur":""}">${dot}<span>${esc(label)}</span></button></li>`;
+  });
+  $("idx").innerHTML = h;
+  $("idx").querySelectorAll("button").forEach(b => b.onclick = () => { cur = +b.dataset.i; $("drawer").hidden = true; render(); });
+}
+
+function go(d){ cur = d > 0 && cur === S.length - 1 ? 0 : Math.max(0, Math.min(S.length - 1, cur + d)); render(); }
+$("next").onclick = () => go(1); $("prev").onclick = () => go(-1);
+$("openIdx").onclick = () => { idx(); $("drawer").hidden = false; };
+$("closeIdx").onclick = () => $("drawer").hidden = true;
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "TEXTAREA") return;
+  if (e.key === "ArrowRight") go(1); if (e.key === "ArrowLeft") go(-1);
+  if (e.key === "Escape") $("drawer").hidden = true;
+});
+
+function toast(m){ const t = $("toast"); t.textContent = m; t.hidden = false; setTimeout(() => t.hidden = true, 2200); }
+$("copy").onclick = () => {
+  const txt = "Respuestas de la sesión con cliente — Observatorio Vejez\n\n" + QS.map(s => {
+    const a = A[s.id]; const v = a && a.v && a.v.length ? a.v.join(", ") : "—";
+    return `• ${s.q}\n  Respuesta: ${v}${a && a.c ? "\n  Comentario: " + a.c : ""}`;
+  }).join("\n\n");
+  navigator.clipboard.writeText(txt).then(() => toast("Copiado. Péguelo en el chat del proyecto."), () => toast("No se pudo copiar en esta vista."));
+};
+
+render();
+
+(async () => {
+  if (!window.claude || !window.claude.use) return;
+  db = await window.claude.use("db");
+  if (!db) return;
+  $("status").textContent = "Guardando en el proyecto";
+  db.collection("respuestas").onSnapshot(snap => {
+    snap.docs.forEach(d => { const x = d.data(); if (x) A[d.id] = {v:Array.isArray(x.valor) ? x.valor : [], c:x.comentario || ""}; });
+    try { localStorage.setItem("obs-resp", JSON.stringify(A)); } catch (e) {}
+    const active = document.activeElement && document.activeElement.tagName === "TEXTAREA";
+    if (!active) render();
+  }, () => { $("status").textContent = "Guardando en este navegador"; });
+})();
+</script>
+
+</html>
