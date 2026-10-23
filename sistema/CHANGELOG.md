@@ -1,5 +1,12 @@
 # Registro de cambios — Arquitecto de Investigación
 
+## v5.2 — 2026-10-23
+
+### Portabilidad y OKF solo para el bibliotecario
+- `AGENTS.md` 5.2: la regla de la *Nota del día* pasa a AGENTS.md (antes solo en `.claude/rules/`) y se aclara que OKF es solo de la capa del bibliotecario; el diseño no lo usa.
+- `README.md`: sección *Cómo usarlo en otra plataforma* con tres capas (núcleo, bibliotecario opcional, adaptadores).
+- `NORMA-OKF` 0.3, `herramientas/validar_okf.py` y `05-bibliotecario` 2.3: OKF solo en `INDICE.md`, la ficha `index.md` y `/log.md`.
+
 ## v5.1 — 2026-10-23
 
 ### Bibliotecario orquestador y núcleo de 8 archivos

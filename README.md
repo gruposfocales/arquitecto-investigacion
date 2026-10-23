@@ -1,4 +1,4 @@
-# Arquitecto de Investigación Estratégica · v5.1
+# Arquitecto de Investigación Estratégica · v5.2
 
 Agente de IA que diseña con el usuario un proyecto de investigación cualitativa, cuantitativa o mixta hasta dejarlo **listo para campo** (*Field-Ready Research Package*): 289 ítems, 21 fases, 7 bloques y 5 gates con aprobación humana.
 
@@ -35,6 +35,19 @@ AUDITORIA.md               Auditoría v3.5 → v4.0
 3. **Proyecto nuevo:** escribe `abrir` y elige *proyecto nuevo*; el bibliotecario crea la carpeta (o corre `python3 herramientas/nuevo_proyecto.py <proyecto> "<Nombre>"`).
 4. **Aprobar:** `ok` · corregir: `10.5: texto` · saltar: `después 10.7` · explicar: `?10.5`. El resto de los comandos está en `AGENTS.md` §9.
 5. **Versionar:** haz *commit* al final de cada sesión, por ejemplo `F14 lote 2: 14.7-14.13 aprobados`.
+
+## Cómo usarlo en otra plataforma
+
+El sistema tiene tres capas; solo la primera es obligatoria.
+
+| Capa | Archivos | Hace falta para |
+|---|---|---|
+| **Núcleo** | `AGENTS.md`, `MANUAL-FASES.md`, `organizacion/ADN.md`, `plantillas/`, `proyectos/` | Diseñar la investigación en cualquier plataforma. Sin OKF ni scripts |
+| **Bibliotecario** (opcional) | `plantillas/NORMA-OKF.md`, `herramientas/validar_okf.py`, la ficha `index.md` y `proyectos/INDICE.md` | Organizar varios proyectos y dar el informe de la biblioteca |
+| **Adaptadores** | `CLAUDE.md`, `.claude/` (skills, reglas, hook) | Skills y atajos de Claude Code. El núcleo funciona sin ellos |
+
+- **Solo chat** (ChatGPT, Gemini, Claude.ai): pega `AGENTS.md` como instrucciones y adjunta `MANUAL-FASES.md` y el `DASHBOARD.md` del proyecto. El agente cuenta las casillas a mano y entrega parches.
+- **Con repositorio** (Codex, Copilot, Cursor, Claude Code): `AGENTS.md` en la raíz se lee solo. Si hay Python 3, `herramientas/` funciona sin instalar nada.
 
 ## Convenciones
 
