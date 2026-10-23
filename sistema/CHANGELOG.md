@@ -5,6 +5,7 @@
 ### Bibliotecario orquestador y núcleo de 8 archivos
 - `05-bibliotecario` 2.0: mantiene el **núcleo** de cada proyecto (AGENTS, MANUAL, DASHBOARD, INSTRUMENTOS, BITÁCORA, POLÍTICA DE DATOS, ADN y mapa de conocimiento), lo revisa al abrir y con el comando nuevo `orden`, y deriva cada pedido a la skill que corresponde.
 - La política de datos funciona como bloqueo: sin política aprobada y revisada, no se monta el campo (`20-campo-kapso`).
+- **Seguimiento:** comando `seguimiento` y sección *Seguimiento* en cada `index.md` (bloqueos, por aprobar, compromisos y evidencia). El bibliotecario avisa solo los bloqueos, los `[p]`/`[r]` de más de 7 días, los proyectos quietos más de 14 días y las fechas límite cercanas. `proyectos/INDICE.md` suma la columna *Bloqueos*.
 - Plantillas nuevas: `plantillas/POLITICA-DATOS.md` y `plantillas/mapa-conocimiento.md`; `nuevo_proyecto.py` crea el núcleo completo. `index.md` suma la sección *Núcleo*.
 
 ## v5.0 — 2026-10-22

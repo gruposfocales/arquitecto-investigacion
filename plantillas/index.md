@@ -31,6 +31,14 @@
 | 7 | `organizacion/ADN.md` (raíz) | |
 | 8 | `evidencia/mapa-conocimiento.md` | |
 
+## Seguimiento
+
+> Tipos: 🛑 bloqueo · ⏳ por aprobar · 📌 compromiso · ❓ evidencia. Lo resuelto se tacha con su fecha.
+
+| Pendiente | Tipo | Desde | Depende de | Próximo paso |
+|---|---|---|---|---|
+| Política de datos por redactar (Fase 15) | 🛑 bloqueo | [fecha PENDIENTE] | proyecto | redactar en la Fase 15 |
+
 ## Otros archivos
 
 | Archivo | Qué guarda |
