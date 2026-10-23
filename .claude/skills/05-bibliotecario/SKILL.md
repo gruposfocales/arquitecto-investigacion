@@ -92,6 +92,17 @@ Si no se cumple la condición, dilo y ofrece el paso que la cumple. Lo que produ
 4. Si `INDICE.md` no existe o le falta una carpeta de `proyectos/`, reconstrúyelo desde los `DASHBOARD.md` y avisa.
 
 ### `nuevo proyecto`
+Abres el **cascarón virgen**: la carpeta con los 8 archivos del núcleo en blanco (solo el nombre, la fecha y la apertura en la bitácora). Nada se llena por adelantado; cada archivo se va llenando a medida que avanza el trabajo:
+
+| Archivo | Se llena en |
+|---|---|
+| `DASHBOARD.md` | Desde la Fase 0, con cada `ok` |
+| `BITACORA.md` | Con cada lote aprobado |
+| `evidencia/mapa-conocimiento.md` | Fase 4 (ítem 4.14) |
+| `INSTRUMENTOS.md` | Desde la Fase 11 |
+| `POLITICA-DATOS.md` | Fase 15 |
+| `index.md` | Al abrir, al archivar evidencia y al cerrar cada sesión |
+
 1. Pide en un solo mensaje los ★ de la Fase 0 (nombre, organización, quién responde, qué espera del agente, fecha límite).
 2. Crea la carpeta: si puedes ejecutar código, `python3 herramientas/nuevo_proyecto.py <p> "<Nombre>"`; si no, copia a mano desde `plantillas/`: `DASHBOARD.md`, `BITACORA.md`, `INSTRUMENTOS.md`, `POLITICA-DATOS.md`, `index.md` y `mapa-conocimiento.md` (este dentro de `evidencia/`); crea `notas/`.
 3. Pon el nombre en los encabezados, llena la ficha de `index.md` y agrega la fila en `proyectos/INDICE.md`.
