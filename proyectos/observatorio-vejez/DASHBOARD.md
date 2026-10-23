@@ -1,10 +1,29 @@
+---
+type: Tablero
+title: DASHBOARD — Observatorio Económico Vejez
+description: Estado vigente de los 289 ítems y los gates del Observatorio de Preparación Económica para la Vejez.
+tags: [observatorio-vejez, F19]
+proyecto: observatorio-vejez
+doc: DASHBOARD
+version: "4.0"
+alcance: proyecto
+estado: "#diseño"
+fase: F19
+generated: { by: claude-bibliotecario/2.2, at: 2026-10-23T09:20:00-05:00 }
+status: draft
+stale_after: 2026-11-06
+sources:
+  - { id: manual, resource: /MANUAL-FASES.md }
+  - { id: bitacora, resource: /proyectos/observatorio-vejez/BITACORA.md }
+---
+
 # DASHBOARD — Observatorio Económico Vejez
 
 > **Avance:** 🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜ 93 % (270/289)
-> **Fase activa:** 18 · Riesgos y limitaciones
-> **Siguiente lote:** `continuar` → podcast, lives → B7, F0, P2-P3 → Gate G3
+> **Fase activa:** 19 · Auditoría metodológica
+> **Siguiente lote:** `continuar` → Fase 19 · Auditoría metodológica (19.1-19.16) → Fase 20 · Gate G3 ⏳ espera revisión legal y prueba de Kapso
 > **Gates:** G0 ✅ · G1 ✅ · G2 ✅ · G3 ⏳ · Entrega ⏳
-> **Actualizado:** 2026-10-21 · Formato v4.0
+> **Actualizado:** 2026-10-23 · Formato v4.0
 
 **Casillas:** `[x]` aprobado · `[p]` propuesto, espera `ok` · `[r]` revisar · `[ ]` vacío · `[-]` no aplica. **★** = ítem que solo decide el usuario. Avance = (`[x]` + `[-]`) / 289, contado por casillas.
 
@@ -28,12 +47,12 @@
 
 ## Alertas
 
-1. **Sin `[r]` abiertos** (17-oct). G3 depende de cerrar las Fases 14-18.
+1. **Sin `[r]` abiertos** (17-oct). Fases 14-18 completas; G3 depende de la revisión legal de la política y de la prueba de Kapso (21-oct).
 2. **OE4 sin vejez vivida en cuotas:** cruzar pensionados (9) e historias 65+ en el análisis; B7 aprobada (20-oct).
 3. **Para G3:** listos encuesta y grupo focal v1.0 (17-oct); drama D1 v0.3 `[x]` (19-oct; GF en G7b y TikTok después de G7b); díada quitada del diseño y del campo (19-oct), cascada aplicada; podcast, lives, B7, F0 v3 y P2-P3 listos (20-oct); F0 no se publica sin enlace a la política.
 4. **🛑 Política de datos:** v0.3 aprobada (17-oct); falta revisión legal antes de publicarla. `[EVIDENCIA REQUERIDA]`: edades 57/62, umbrales 18/60, corte de 80 años.
 5. **Kapso por probar:** Pro USD 25/mes cotizado (17-oct); falta saber si incluye las tarifas de Meta, audio y transcripción, y dónde quedan los datos.
-6. **`[RIESGO]` reclutamiento sin pauta:** llegar a más de 3.000 personas en el filtro, sobre todo 65+ y rurales, sin publicidad pagada. Plan B pendiente en la Fase 18.
+6. **`[RIESGO]` reclutamiento sin pauta:** llegar a más de 3.000 personas en el filtro, sobre todo 65+ y rurales, sin publicidad pagada. Plan B en `RIESGOS.md` 18.2 y 18.4 (aprobado 17-oct); la contingencia de 18.4 aún menciona díadas, por revisar.
 7. **`[RIESGO]` datos sin anonimizar (13.2, 13.4)** + deuda de 58 ítems de las Fases 0-6 sin detalle en bitácora (fuente única: GitHub).
 8. **Dramas (17-oct):** social listening §12 y diseño de comentarios §13 aprobados · caps. aprobados: 2.1, 2.3, 4.3, 5.3 · no aprobados: 1.1, 3.2, 4.1 · faltan 8 del mapa §11 `[p]` · falta confirmar que la política de datos cubre comentarios de redes.
 
@@ -44,9 +63,9 @@
 | 1 · Inicio y Admisión | 0-2 | 35/35 |
 | 2 · Enmarcado | 3-4 | 30/30 |
 | 3 · Conocimiento | 5-6 | 18/18 |
-| 4 · Diseño Metodológico | 7-11 | 62/67 |
-| 5 · Trazabilidad y Análisis | 12-13 | 28/29 |
-| 6 · Operación de Campo | 14-18 | 6/91 |
+| 4 · Diseño Metodológico | 7-11 | 67/67 |
+| 5 · Trazabilidad y Análisis | 12-13 | 29/29 |
+| 6 · Operación de Campo | 14-18 | 91/91 |
 | 7 · Cierre | 19-20 | 0/19 |
 
 ---
@@ -210,7 +229,7 @@
 - [x] 9.2 Técnicas evaluadas — Filtro · bot de WhatsApp (o módulo de pensionados) · GF virtual 1 h/5 personas · podcast de 5 audiencias · encuesta · redes y lives · dramas cortos. Que sea divertido.
 - [x] 9.3 ★ Diseño seleccionado — DANE → filtro → bot o módulo de pensionados → GF → podcast → lives → encuesta; redes en paralelo. Lives = señal, no hallazgo.
 
-### Fase 10 · Población, segmentos y muestra (16/20)
+### Fase 10 · Población, segmentos y muestra (20/20)
 
 - [x] 10.1 Población de interés — Personas de 25 años o más en Colombia, urbanas y rurales, con cualquier trayectoria; incluye a quienes están en edad de pensión.
 - [x] 10.2 Unidad de análisis — La persona situada en su trayectoria biográfica, laboral, familiar, territorial e institucional.
@@ -233,7 +252,7 @@
 - [x] 10.19 Ampliar o detener — Ampliar si falta el mínimo o surgen híbridos; detener en saturación o al agotar recursos, documentando lo no cubierto.
 - [x] 10.20 Saturación o poder — Saturación: 3 casos seguidos sin categorías nuevas, decidida por una persona; encuesta: mínimo 100.
 
-### Fase 11 · Técnicas e instrumentos (14/15)
+### Fase 11 · Técnicas e instrumentos (15/15)
 
 - [x] 11.1 Propósito — 8 instrumentos + módulo de pensionados (alterno al bot), microdatos DANE y lives. Ver `INSTRUMENTOS.md`.
 - [x] 11.2 Objetivos cubiertos — Asignación por objetivo aprobada; DANE → OE1, OE3, OE4; lives → OE2; pensionados → OE1, OE3.
@@ -267,7 +286,7 @@
 - [x] 12.8 Evidencia sin uso — Se suman pensiones solidarias (OE1) y longevidad (B6); los *nudges* quedan para la Fase 17.
 - [x] 12.9 Entregables sin decisión — Observatorio vivo: página Wix + boletines fechados + ficha de experiencia para convocatorias de ONG.
 
-### Fase 13 · Plan de análisis (19/20)
+### Fase 13 · Plan de análisis (20/20)
 
 - [x] 13.1 Unidad de análisis — 4 niveles: persona · segmento · hogar (OE3) · régimen HS4 asignado por estrategias, no por ingreso.
 - [x] 13.2 Preparación de datos — Transcripción; base con fecha y etiquetas; **sin anonimizar** (nombre visible para el equipo) `[RIESGO]`. Se mantiene (17-oct, usuario: B): visible solo para Camilo y el agente; lo publicado y GitHub van con seudónimo (15.8, 15.10).
@@ -294,7 +313,7 @@
 
 ## Bloque 6 · Operación de Campo (Fases 14-18)
 
-### Fase 14 · Operación y trabajo de campo (6/20)
+### Fase 14 · Operación y trabajo de campo (20/20)
 
 - [x] 14.1 Fases operativas — 7 fases: Preparación · Base cuantitativa (DANE) · Captación individual · GF + dramas · Podcast + lives · Encuesta · Cierre.
 - [x] 14.2 Actividades — Actividades por fase aprobadas; la preparación va sin pauta pagada.
@@ -317,7 +336,7 @@
 - [x] 14.19 Incidentes — Caída de Kapso/Meet, malestar emocional, datos sensibles expuestos o comentarios ofensivos: registro, pausa, aviso al investigador en ≤24 h.
 - [x] 14.20 Cierre de campo — Por ola: cierra cuando cada combinación cumple cuota y saturación (13.16); agradecimiento, acceso a resultados, congelamiento de versiones; luego abre la siguiente ola (coherente con 0.9) (17-oct).
 
-### Fase 15 · Ética, privacidad y gobierno (0/20)
+### Fase 15 · Ética, privacidad y gobierno (20/20)
 
 - [x] 15.1 Datos personales — Nombre o alias, número de WhatsApp, edad, territorio, trayectoria laboral, audios, inscripción al panel.
 - [x] 15.2 Datos sensibles — Sí: salud, situación económica, creencias y voz; requieren autorización expresa. [RIESGO]
@@ -340,7 +359,7 @@
 - [x] 15.19 Aprobaciones requeridas — Revisión legal de la política (Ley 1581) e inscripción en el RNBD si aplica. `[EVIDENCIA REQUERIDA]` obligación de registro.
 - [x] 15.20 Acciones prohibidas — Vender datos · recoger antes del "Sí acepto" · publicar sin autorización · prometer montos del panel · revelar hipótesis · subir llave o audios a GitHub.
 
-### Fase 16 · Cronograma, recursos y presupuesto (0/18)
+### Fase 16 · Cronograma, recursos y presupuesto (18/18)
 
 - [x] 16.1 ★ Fecha de inicio — Noviembre de 2026, primera ola (17-oct, usuario).
 - [x] 16.2 ★ Fecha límite — Sin fecha única (0.9); cada ola cierra al cumplir cuotas y saturación (14.20).
@@ -361,7 +380,7 @@
 - [x] 16.17 Restricciones críticas — Tiempo de Camilo como único humano; respuesta: crear agentes de IA que ayuden (17-oct, usuario). Sin pauta ni presupuesto definido.
 - [x] 16.18 Escenarios — Escalar poco a poco: arrancar pequeño y crecer por olas según resultados y recursos (17-oct, usuario).
 
-### Fase 17 · Entregables y activación (0/15)
+### Fase 17 · Entregables y activación (15/15)
 
 - [x] 17.1 Entregables obligatorios — Por ola: informe de hallazgos (5.3: mapa de sustitución, heurísticas, matriz de cuidado, fichas de tipología) · piezas para redes y dramas · episodios de podcast · resumen B2B agregado.
 - [x] 17.2 Audiencia por entregable — Informe: Camilo, aliados y política pública · resumen B2B: fondos y bancos · redes y dramas: público general · podcast: prospectos y ecosistema (4.13).
@@ -379,7 +398,7 @@
 - [x] 17.14 Medición de resultados — En el tablero (dashboard) por ola: cambio entre olas en indicadores y regímenes, y acciones adoptadas por aliados (17-oct, usuario).
 - [x] 17.15 Aprendizajes reutilizables — Como plantillas y skills: instrumentos, flujos de Kapso, agentes y protocolos (17-oct, usuario).
 
-### Fase 18 · Riesgos y limitaciones (0/18)
+### Fase 18 · Riesgos y limitaciones (18/18)
 
 - [x] 18.1 Metodológicos — comparar olas con muestras distintas; OE4 sin vejez vivida en cuotas
 - [x] 18.2 Reclutamiento — sin pauta no se llenan cuotas (rural, 45-64)
