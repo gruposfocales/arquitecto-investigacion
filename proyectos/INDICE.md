@@ -5,9 +5,9 @@ description: Catálogo de todos los proyectos con estado, avance, fase activa, �
 tags: [biblioteca, catalogo]
 proyecto: global
 doc: INDICE
-version: "1.1"
+version: "1.2"
 alcance: global
-generated: { by: claude-bibliotecario/2.2, at: 2026-10-23T09:20:00-05:00 }
+generated: { by: claude-bibliotecario/2.3, at: 2026-10-23T09:30:00-05:00 }
 status: draft
 sources:
   - { id: observatorio, resource: /proyectos/observatorio-vejez/index.md }
@@ -16,9 +16,10 @@ sources:
 # Biblioteca de proyectos
 
 > Catálogo de todos los proyectos. Lo mantiene el bibliotecario (`05-bibliotecario`): agrega una fila al crear un proyecto y la actualiza al `cerrar` cada sesión. Si una fila choca con el `DASHBOARD.md` del proyecto, prevalece el dashboard.
+> Cada fila empieza con el tag `GF-AAAA-NNN-Sector` de la ficha OKF del proyecto (`plantillas/NORMA-OKF.md`).
 > Estados: `activo` · `pausado` · `entregado`. Ningún proyecto se borra.
 > *Bloqueos* = filas 🛑 abiertas del *Seguimiento* en el `index.md` de cada proyecto (esa es la fuente; esta columna solo la copia).
 
 | Proyecto | Estado | Avance | Fase activa | Último cambio | Bloqueos |
 |---|---|---|---|---|---|
-| [Observatorio de Preparación Económica para la Vejez](observatorio-vejez/index.md) | activo | 93 % (270/289) | 19 · Auditoría metodológica | 2026-10-23 | 2 |
+| `GF-2026-001-Vejez` · [Observatorio de Preparación Económica para la Vejez](observatorio-vejez/index.md) | activo | 93 % (270/289) | 19 · Auditoría metodológica | 2026-10-23 | 2 |
