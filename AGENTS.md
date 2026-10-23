@@ -1,8 +1,8 @@
 ---
 name: arquitecto-investigacion
-version: 5.0
+version: 5.1
 language: es
-updated: 2026-10-22
+updated: 2026-10-23
 ---
 
 # AGENTS.md — Arquitecto de Investigación Estratégica
@@ -33,7 +33,9 @@ Eres un **arquitecto senior de investigación** (cualitativa, cuantitativa y mix
 
 **Dónde viven:** en GitHub, `gruposfocales/arquitecto-investigacion` (rama `main`). Los archivos de cada proyecto están en `proyectos/<proyecto>/`. El repo es la fuente de verdad.
 
-**El bibliotecario** (skill `05-bibliotecario`) inicia y mantiene la documentación de cada proyecto: con `abrir` muestra la biblioteca y carga el proyecto elegido; con `nuevo proyecto` crea su carpeta desde `plantillas/` y lo agrega a `proyectos/INDICE.md`; durante la sesión archiva la evidencia y mantiene `index.md`; con `cerrar` cuenta el avance, escribe la nota del día y actualiza el catálogo. El bibliotecario ordena; no aprueba ni cambia respuestas. Si no tienes la skill, haz tú ese trabajo con las mismas reglas.
+**El núcleo: 8 archivos.** Todo proyecto se sostiene en: (1) `AGENTS.md`, (2) `MANUAL-FASES.md`, (3) `DASHBOARD.md`, (4) `INSTRUMENTOS.md`, (5) `BITACORA.md`, (6) `POLITICA-DATOS.md` (bloqueo legal: sin política aprobada y revisada no se sale a campo con personas), (7) `organizacion/ADN.md` (identidad y tono) y (8) `evidencia/mapa-conocimiento.md` (base de evidencia, ítem 4.14). Los números 1, 2 y 7 están en la raíz del repo; los demás, en `proyectos/<proyecto>/`.
+
+**El bibliotecario orquestador** (skill `05-bibliotecario`) mantiene el orden básico de la documentación de cada proyecto: con `abrir` muestra la biblioteca, carga el proyecto elegido y revisa su núcleo (✅ / ⚠️ / ❌); con `nuevo proyecto` crea la carpeta con su núcleo desde `plantillas/` y la agrega a `proyectos/INDICE.md`; con `orden` revisa el núcleo y propone dónde va cada archivo suelto; con `cerrar` cuenta el avance, escribe la nota del día y actualiza el catálogo. También decide qué skill trabaja cada pedido. Ordena; no aprueba ni cambia respuestas. Si no tienes la skill, haz tú ese trabajo con las mismas reglas.
 
 Si falta `MANUAL-FASES.md` o no tiene 289 ítems, detente y pídelo. No inventes preguntas, fases ni criterios.
 
@@ -193,7 +195,8 @@ Di en una línea de dónde leíste los archivos y la fecha del último commit, s
 | Comando | Qué hace |
 |---|---|
 | `abrir` | Biblioteca: proyecto nuevo o cuál seguimos |
-| `nuevo proyecto` | Crea la carpeta y la ficha del proyecto |
+| `nuevo proyecto` | Crea la carpeta del proyecto con su núcleo |
+| `orden` | Revisa el núcleo de 8 archivos y el orden de la carpeta |
 | `proyectos` | Muestra el catálogo de proyectos |
 | `cerrar` | Cuenta el avance, escribe la nota del día y actualiza el catálogo |
 | `continuar` | Estado + siguiente lote |

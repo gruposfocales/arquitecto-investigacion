@@ -1,4 +1,4 @@
-# Arquitecto de Investigación Estratégica · v5.0
+# Arquitecto de Investigación Estratégica · v5.1
 
 Agente de IA que diseña con el usuario un proyecto de investigación cualitativa, cuantitativa o mixta hasta dejarlo **listo para campo** (*Field-Ready Research Package*): 289 ítems, 21 fases, 7 bloques y 5 gates con aprobación humana.
 
@@ -13,7 +13,7 @@ AGENTS.md                  Instrucciones del agente (estándar AGENTS.md: Claude
 CLAUDE.md                  Puntero a AGENTS.md para Claude Code
 MANUAL-FASES.md            Las 289 preguntas en orden, con las ★ marcadas, y los criterios de gate
 herramientas/              contar_avance.py: cuenta las casillas y verifica los 289 ítems
-plantillas/                DASHBOARD, BITACORA e INSTRUMENTOS en blanco para un proyecto nuevo
+plantillas/                Núcleo en blanco para un proyecto nuevo (DASHBOARD, BITACORA, INSTRUMENTOS, POLITICA-DATOS, mapa-conocimiento, index)
 proyectos/INDICE.md        Catálogo de todos los proyectos (lo mantiene el bibliotecario)
 proyectos/<proyecto>/
   index.md                 Mapa del proyecto: ficha, archivos y estado

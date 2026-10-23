@@ -6,7 +6,15 @@ from datetime import date
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
-PLANTILLAS = ["DASHBOARD.md", "BITACORA.md", "INSTRUMENTOS.md", "index.md"]
+# plantilla → destino dentro del proyecto
+PLANTILLAS = {
+    "DASHBOARD.md": "DASHBOARD.md",
+    "BITACORA.md": "BITACORA.md",
+    "INSTRUMENTOS.md": "INSTRUMENTOS.md",
+    "POLITICA-DATOS.md": "POLITICA-DATOS.md",
+    "mapa-conocimiento.md": "evidencia/mapa-conocimiento.md",
+    "index.md": "index.md",
+}
 
 
 def main():
@@ -20,14 +28,14 @@ def main():
     for carpeta in ("evidencia", "notas"):
         (destino / carpeta).mkdir(parents=True)
         (destino / carpeta / ".gitkeep").touch()
-    for archivo in PLANTILLAS:
+    for archivo, ruta in PLANTILLAS.items():
         texto = (RAIZ / "plantillas" / archivo).read_text(encoding="utf-8")
         texto = texto.replace("[Nombre del proyecto]", nombre).replace("[proyecto]", slug)
         if archivo == "index.md":
             texto = texto.replace("| **Abierto** | [fecha PENDIENTE] |", f"| **Abierto** | {hoy} |")
         if archivo == "BITACORA.md":
             texto += f"\n## {hoy} · Apertura del proyecto\n- Carpeta creada por el bibliotecario.\n"
-        (destino / archivo).write_text(texto, encoding="utf-8")
+        (destino / ruta).write_text(texto, encoding="utf-8")
     indice = RAIZ / "proyectos" / "INDICE.md"
     with indice.open("a", encoding="utf-8") as f:
         f.write(f"| [{nombre}]({slug}/index.md) | activo | 0 % (0/289) | 0 · Configuración | {hoy} |\n")

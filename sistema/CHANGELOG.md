@@ -1,5 +1,12 @@
 # Registro de cambios — Arquitecto de Investigación
 
+## v5.1 — 2026-10-23
+
+### Bibliotecario orquestador y núcleo de 8 archivos
+- `05-bibliotecario` 2.0: mantiene el **núcleo** de cada proyecto (AGENTS, MANUAL, DASHBOARD, INSTRUMENTOS, BITÁCORA, POLÍTICA DE DATOS, ADN y mapa de conocimiento), lo revisa al abrir y con el comando nuevo `orden`, y deriva cada pedido a la skill que corresponde.
+- La política de datos funciona como bloqueo: sin política aprobada y revisada, no se monta el campo (`20-campo-kapso`).
+- Plantillas nuevas: `plantillas/POLITICA-DATOS.md` y `plantillas/mapa-conocimiento.md`; `nuevo_proyecto.py` crea el núcleo completo. `index.md` suma la sección *Núcleo*.
+
 ## v5.0 — 2026-10-22
 
 ### Bibliotecario: una biblioteca de proyectos
