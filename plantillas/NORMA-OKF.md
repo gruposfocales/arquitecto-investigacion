@@ -1,13 +1,13 @@
 ---
 type: Norma de biblioteca
 title: OKF 0.2 para GruposFocales
-description: Norma que sigue el bibliotecario orquestador para ordenar los proyectos de investigación con Open Knowledge Format 0.2.
+description: Norma mínima con la que el bibliotecario organiza los proyectos de investigación con Open Knowledge Format 0.2.
 tags: [biblioteca, okf, norma]
 proyecto: global
 doc: NORMA-OKF
-version: "0.2"
+version: "0.3"
 alcance: global
-generated: { by: claude-bibliotecario/0.1, at: 2026-10-23T09:15:00-05:00 }
+generated: { by: claude-bibliotecario/2.3, at: 2026-10-23T09:30:00-05:00 }
 status: draft
 sources:
   - id: okf-spec
@@ -15,131 +15,78 @@ sources:
     title: Especificación OKF v0.2
   - id: doc-propuesta
     resource: https://claude.ai/artifact/MJuDFmdmj9fmjUJ3LyMESG
-    title: OKF 0.2 para GruposFocales (Claude Doc, versión editable)
+    title: OKF 0.2 para GruposFocales (Claude Doc, propuesta original v0.2)
 ---
 
 # OKF 0.2 para GruposFocales
 
-Versión editable: [Claude Doc](https://claude.ai/artifact/MJuDFmdmj9fmjUJ3LyMESG). Si ambos difieren, manda el Claude Doc.
+Desde la v0.3 manda este archivo. El [Claude Doc](https://claude.ai/artifact/MJuDFmdmj9fmjUJ3LyMESG) queda como propuesta original.
 
 ## Qué es OKF 0.2
 
-OKF 0.2 es un formato de archivos, no un programa: no se instala. Lo publicó Google Cloud (v0.1 el 12 de junio de 2026, v0.2 el 24 de julio de 2026)[^okf-spec]. Adoptarlo significa escribir nuestros .md siguiendo sus reglas:
+OKF 0.2 es un formato de archivos, no un programa: no se instala. Lo publicó Google Cloud (v0.1 el 12 de junio de 2026, v0.2 el 24 de julio de 2026)[^okf-spec]. Un archivo cumple OKF si empieza con un encabezado YAML que tiene `type`; lo demás es opcional. La v0.2 añade señales de confianza: `generated`, `verified`, `sources`, `status` (draft, stable, deprecated) y `stale_after`.
 
-- Un **bundle** es una carpeta de archivos markdown. Cada archivo es un "concepto" y su ruta es su identidad.
-- Todo .md lleva encabezado YAML con un campo obligatorio: `type`. Se recomiendan `title`, `description`, `resource` y `tags`, y se permiten campos propios.
-- `index.md` (índice de cada carpeta) y `log.md` (historial, fechas AAAA-MM-DD, lo más nuevo arriba) son nombres reservados.
-- Los vínculos son links markdown normales, preferiblemente con ruta desde la raíz: `/proyectos/GF-2026-001-Salud/ADN.md`.
-- La v0.2 añade señales de confianza: `generated`, `verified`, `sources`, `status` (draft, stable, deprecated) y `stale_after`.
+## Alcance: solo la capa de organización
 
-## Estructura de carpetas
+OKF sirve para que el bibliotecario organice **los proyectos**, no para reescribir su contenido. Cada proyecto conserva su propia lógica interna (DASHBOARD, BITACORA, INSTRUMENTOS, evidencia, notas): esos archivos **no necesitan** encabezado OKF y no se migran.
 
-```
-biblioteca/
-├── index.md                 ← okf_version: "0.2" + lista de proyectos (lo escribe el bibliotecario)
-├── log.md                   ← historial global
-├── global/
-│   ├── index.md
-│   ├── ADN.md               ← maestro, alcance: global
-│   ├── POLITICA-DATOS.md    ← maestro v0.3
-│   └── MANUAL-FASES.md      ← plantilla maestra (289 preguntas y gates)
-└── proyectos/
-    ├── index.md
-    └── GF-2026-001-Salud/
-        ├── index.md
-        ├── AGENTS.md
-        ├── MANUAL-FASES.md
-        ├── DASHBOARD.md
-        ├── INSTRUMENTOS.md
-        ├── BITACORA.md
-        ├── POLITICA-DATOS.md
-        ├── ADN.md
-        ├── DEEPRESEARCH.md
-        └── SKILLS.md
-```
+Llevan encabezado OKF solo estos archivos:
 
-Los archivos con `alcance: global` en cada proyecto son copias de un maestro en `/global/` y lo citan en `sources`. Esto aplica solo a los proyectos nuevos; los existentes (Observatorio) siguen con los maestros en la raíz hasta migrarlos. Nombres de carpeta sin tildes ni espacios.
-
-## Encabezado YAML
-
-| Campo | Origen | Uso |
+| Archivo | `type` | Para qué |
 | --- | --- | --- |
-| `type` | OKF, obligatorio | Clase del documento |
-| `title` | OKF | Nombre legible |
-| `description` | OKF | Una frase; se copia al `index.md` |
-| `tags` | OKF | `[GF-2026-001, salud, F2]` |
-| `proyecto` | Propio | `GF-2026-001-Salud` o `global` |
-| `doc` | Propio | Nombre canónico, ej. `INSTRUMENTOS` |
-| `version` | Propio | Versión del documento |
-| `alcance` | Propio | `global` o `proyecto` |
-| `generated` | OKF 0.2 | Quién escribió y cuándo; reemplaza `actualizado` |
-| `verified` | OKF 0.2 | Aprobaciones; un `human:` = gate aprobado |
-| `sources` | OKF 0.2 | Maestro global, evidencia, documentos citados |
-| `status` | OKF 0.2 | `draft`, `stable` o `deprecated` |
-| `stale_after` | OKF 0.2 | Fecha en que debe revisarse |
+| `proyectos/INDICE.md` | Catálogo de proyectos | Una fila por proyecto |
+| `proyectos/<carpeta>/index.md` | Índice de proyecto | La **ficha** del proyecto: lo único que el bibliotecario necesita leer para el informe |
+| `/log.md` (cuando exista) | Log | Historial global, lo más nuevo arriba |
+| `plantillas/NORMA-OKF.md` | Norma de biblioteca | Esta norma |
 
-Ejemplo (`INSTRUMENTOS.md`):
+## La ficha del proyecto
+
+Es el encabezado de `proyectos/<carpeta>/index.md`. Campos obligatorios:
+
+| Campo | Ejemplo | Regla |
+| --- | --- | --- |
+| `type` | `Índice de proyecto` | Fijo |
+| `proyecto` | `GF-2026-001-Salud` | Tag `GF-AAAA-NNN-Sector`: año de apertura, consecutivo de 3 dígitos, sector sin tildes ni espacios |
+| `estado` | `"#diseño"` | `#diseño` · `#campo` · `#analisis` · `#cerrado` · `#pausado` |
+| `fase` | `F19` | Fase activa, tal como la da el `DASHBOARD.md` del proyecto |
+| `generated` | `{ by: claude-bibliotecario/2.3, at: 2026-10-23T09:30:00-05:00 }` | Quién actualizó la ficha y cuándo |
+| `stale_after` | `2026-11-06` | Fecha en que la ficha debe revisarse (14 días por defecto) |
+
+Opcionales: `title`, `description`, `tags`, `carpeta` (si no coincide con el tag), `ultimo_gate` (`"G2 · 2026-10-16"`), `status`, `sources`.
 
 ```yaml
 ---
-type: Instrumento
-title: Guía de grupo focal — Salud
-description: Guía de moderación y filtro de reclutamiento que sale a campo.
-tags: [GF-2026-001, salud, F3]
-proyecto: GF-2026-001-Salud
-doc: INSTRUMENTOS
-version: "1.2"
-alcance: proyecto
-generated: { by: arquitecto-investigacion/1.0, at: 2026-10-20T15:00:00-05:00 }
-verified:
-  - { by: "human:gruposfocales", at: 2026-10-22T10:00:00-05:00 }
-status: stable
-stale_after: 2027-01-31
-sources:
-  - { id: evidencia, resource: /proyectos/GF-2026-001-Salud/DEEPRESEARCH.md }
-  - { id: politica, resource: /proyectos/GF-2026-001-Salud/POLITICA-DATOS.md }
+type: Índice de proyecto
+title: Guía de salud · mapa
+proyecto: GF-2026-002-Salud
+estado: "#diseño"
+fase: F0
+ultimo_gate: "—"
+generated: { by: claude-bibliotecario/2.3, at: 2026-10-23T09:30:00-05:00 }
+stale_after: 2026-11-06
 ---
 ```
 
-Las fechas llevan la hora de Bogotá con su zona explícita: `2026-10-23T09:15:00-05:00`. En el texto, `AAAA-MM-DD`.
+Las fechas de `generated.at` llevan la hora de Bogotá con su zona: `2026-10-23T09:30:00-05:00`. En el texto, `AAAA-MM-DD`.
 
-## Los 9 archivos
+## Carpetas
 
-| Archivo | `type` | `alcance` | Regla de confianza |
-| --- | --- | --- | --- |
-| AGENTS.md | Reglas de agente | proyecto | `verified` humano antes de usar el soul del proyecto |
-| MANUAL-FASES.md | Manual de fases | global (copia) | `sources` → `/global/MANUAL-FASES.md` |
-| DASHBOARD.md | Tablero | proyecto | Campos `estado` (#diseño, #campo, #analisis, #cerrado) y `fase`; `stale_after` corto (14 días) |
-| INSTRUMENTOS.md | Instrumento | proyecto | `status: draft` hasta aprobar el gate |
-| BITACORA.md | Bitácora | proyecto | Cada aprobación se registra aquí y se refleja como `verified` en el documento aprobado |
-| POLITICA-DATOS.md | Política de datos | global (copia v0.3) | Sin `verified` humano vigente, no se sale a campo |
-| ADN.md | Identidad de marca | global (copia) | `sources` → `/global/ADN.md` |
-| DEEPRESEARCH.md | Base de evidencia | proyecto | Cada estudio es una entrada de `sources`, citado con notas al pie |
-| SKILLS.md | Habilidades | proyecto | `deprecated` cuando una habilidad se retira |
+- Proyectos nuevos: carpeta con el tag (`proyectos/GF-2026-002-Salud/`).
+- Proyectos existentes: conservan su carpeta y llevan `carpeta:` en la ficha. No se renombran.
+- Los maestros (`AGENTS.md`, `MANUAL-FASES.md`, `organizacion/ADN.md`) siguen en la raíz.
 
 ## Rutina del bibliotecario
 
-1. Leer `/index.md` y `/proyectos/index.md` para listar los proyectos abiertos.
-2. Por cada proyecto, leer el encabezado de `DASHBOARD.md`: `estado`, `fase`, `stale_after`.
-3. Revisar los 9 archivos y señalar alertas:
-    - Falta un archivo del núcleo, o le falta `type`.
-    - Un documento pasó su `stale_after`.
-    - Una copia global tiene `version` menor que su maestro.
-    - El proyecto está en #campo y POLITICA-DATOS.md o INSTRUMENTOS.md no tiene `verified` humano.
-4. Saludar y presentar el informe: una línea por proyecto con estado, fase y alertas. Ofrecer abrir uno o crear uno nuevo.
-5. Al crear un proyecto: copiar la plantilla, `status: draft` en todo, registrar en `/log.md`, regenerar los `index.md`.
-6. Al aprobar un gate: anotar en BITACORA.md, añadir `verified` en el documento aprobado y pasarlo a `status: stable`.
+1. Correr `python3 herramientas/validar_okf.py`: revisa el catálogo y las fichas, no cambia nada.
+2. Leer la ficha de cada proyecto y armar el informe: tag, estado, fase, último gate y alertas.
+3. Alertas: ficha sin campo obligatorio, `stale_after` vencido, carpeta de `proyectos/` sin fila en `INDICE.md`.
+4. Al cambiar de estado o de fase: actualizar la ficha y la fila del catálogo.
 
 ## Decisiones (2026-10-23)
 
 - La biblioteca vive en el repositorio GitHub `gruposfocales/arquitecto-investigacion`.
-- Maestros en `/global/`: solo para proyectos nuevos.
+- OKF solo en la capa de organización; los documentos internos de cada proyecto no se migran (el Observatorio sigue con su lógica).
 - Zona horaria: America/Bogota (-05:00).
-- `BITACORA.md` se queda en cada proyecto como registro de aprobaciones (solo crece, lo más viejo arriba). `/log.md` es solo el historial global de la biblioteca (lo más nuevo arriba, una línea por evento). Un gate aprobado deja tres huellas: entrada en BITACORA, `verified: human:` en el documento y una línea en `/log.md`.
-
-## Pendiente
-
-- Validador de encabezados.
-- Migrar el Observatorio a OKF.
+- `BITACORA.md` se queda en cada proyecto como registro de aprobaciones. `/log.md` es solo el historial global.
 
 [^okf-spec]: https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md

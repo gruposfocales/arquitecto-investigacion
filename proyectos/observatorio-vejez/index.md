@@ -2,12 +2,16 @@
 type: Índice de proyecto
 title: Observatorio de Preparación Económica para la Vejez · mapa
 description: Mapa del proyecto, estado, núcleo y seguimiento de pendientes; lo mantiene el bibliotecario.
-tags: [observatorio-vejez, F19]
-proyecto: observatorio-vejez
+tags: [GF-2026-001, vejez, F19]
+proyecto: GF-2026-001-Vejez
+carpeta: observatorio-vejez
+estado: "#diseño"
+fase: F19
+ultimo_gate: "G2 · 2026-10-16"
 doc: index
-version: "1.1"
+version: "1.2"
 alcance: proyecto
-generated: { by: claude-bibliotecario/2.2, at: 2026-10-23T09:20:00-05:00 }
+generated: { by: claude-bibliotecario/2.3, at: 2026-10-23T09:30:00-05:00 }
 status: draft
 stale_after: 2026-11-06
 sources:
@@ -23,6 +27,7 @@ sources:
 
 | | |
 |---|---|
+| **Tag** | `GF-2026-001-Vejez` |
 | **Carpeta** | `proyectos/observatorio-vejez/` |
 | **Organización** | Grupos Focales (GruposFocales.com) |
 | **Responde** | Camilo (*Camilogico*), investigador principal |
