@@ -5,9 +5,9 @@ description: Norma que sigue el bibliotecario orquestador para ordenar los proye
 tags: [biblioteca, okf, norma]
 proyecto: global
 doc: NORMA-OKF
-version: "0.1"
+version: "0.2"
 alcance: global
-generated: { by: claude-bibliotecario/0.1, at: 2026-10-23T13:50:00Z }
+generated: { by: claude-bibliotecario/0.1, at: 2026-10-23T09:15:00-05:00 }
 status: draft
 sources:
   - id: okf-spec
@@ -58,7 +58,7 @@ biblioteca/
         └── SKILLS.md
 ```
 
-Los archivos con `alcance: global` en cada proyecto son copias de un maestro en `/global/` y lo citan en `sources`. Nombres de carpeta sin tildes ni espacios.
+Los archivos con `alcance: global` en cada proyecto son copias de un maestro en `/global/` y lo citan en `sources`. Esto aplica solo a los proyectos nuevos; los existentes (Observatorio) siguen con los maestros en la raíz hasta migrarlos. Nombres de carpeta sin tildes ni espacios.
 
 ## Encabezado YAML
 
@@ -101,7 +101,7 @@ sources:
 ---
 ```
 
-Las fechas llevan zona horaria explícita (pendiente confirmar cuál).
+Las fechas llevan la hora de Bogotá con su zona explícita: `2026-10-23T09:15:00-05:00`. En el texto, `AAAA-MM-DD`.
 
 ## Los 9 archivos
 
@@ -130,12 +130,16 @@ Las fechas llevan zona horaria explícita (pendiente confirmar cuál).
 5. Al crear un proyecto: copiar la plantilla, `status: draft` en todo, registrar en `/log.md`, regenerar los `index.md`.
 6. Al aprobar un gate: anotar en BITACORA.md, añadir `verified` en el documento aprobado y pasarlo a `status: stable`.
 
+## Decisiones (2026-10-23)
+
+- La biblioteca vive en el repositorio GitHub `gruposfocales/arquitecto-investigacion`.
+- Maestros en `/global/`: solo para proyectos nuevos.
+- Zona horaria: America/Bogota (-05:00).
+- `BITACORA.md` se queda en cada proyecto como registro de aprobaciones (solo crece, lo más viejo arriba). `/log.md` es solo el historial global de la biblioteca (lo más nuevo arriba, una línea por evento). Un gate aprobado deja tres huellas: entrada en BITACORA, `verified: human:` en el documento y una línea en `/log.md`.
+
 ## Pendiente
 
-- Dónde vivirá la biblioteca (repositorio GitHub o carpeta local).
-- Confirmar maestros en `/global/`.
-- BITACORA.md se queda (recomendado) o pasa a `log.md`.
-- Zona horaria.
 - Validador de encabezados.
+- Migrar el Observatorio a OKF.
 
 [^okf-spec]: https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md
