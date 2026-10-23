@@ -1,3 +1,20 @@
+---
+type: Índice de proyecto
+title: Observatorio de Preparación Económica para la Vejez · mapa
+description: Mapa del proyecto, estado, núcleo y seguimiento de pendientes; lo mantiene el bibliotecario.
+tags: [observatorio-vejez, F19]
+proyecto: observatorio-vejez
+doc: index
+version: "1.1"
+alcance: proyecto
+generated: { by: claude-bibliotecario/2.2, at: 2026-10-23T09:20:00-05:00 }
+status: draft
+stale_after: 2026-11-06
+sources:
+  - { id: dashboard, resource: /proyectos/observatorio-vejez/DASHBOARD.md }
+  - { id: nota, resource: /proyectos/observatorio-vejez/notas/2026-10-21.md }
+---
+
 # Observatorio de Preparación Económica para la Vejez · mapa
 
 > Lo mantiene el bibliotecario (`05-bibliotecario`). Es lo primero que se lee al abrir el proyecto. Si choca con `DASHBOARD.md`, prevalece el dashboard.
@@ -16,7 +33,7 @@
 
 | Avance | Fase activa | Gates | Última nota |
 |---|---|---|---|
-| 93 % (270/289) | 18 · Riesgos y limitaciones | G0 ✅ · G1 ✅ · G2 ✅ · G3 ⏳ · Entrega ⏳ | `notas/2026-10-19.md` |
+| 93 % (270/289) | 19 · Auditoría metodológica | G0 ✅ · G1 ✅ · G2 ✅ · G3 ⏳ · Entrega ⏳ | `notas/2026-10-21.md` |
 
 ## Núcleo
 
@@ -24,7 +41,7 @@
 |---|---|---|
 | 1 | `AGENTS.md` (raíz) | ✅ v5.1 |
 | 2 | `MANUAL-FASES.md` (raíz) | ✅ 289 ítems |
-| 3 | `DASHBOARD.md` | ✅ 93 % (270/289), actualizado 2026-10-21 |
+| 3 | `DASHBOARD.md` | ✅ 93 % (270/289), actualizado 2026-10-23 |
 | 4 | `INSTRUMENTOS.md` | ✅ |
 | 5 | `BITACORA.md` | ✅ |
 | 6 | `POLITICA-DATOS.md` | ⚠️ v0.3 `[x]` aprobada · falta revisión legal → campo bloqueado |
@@ -39,7 +56,7 @@
 |---|---|---|---|---|
 | Revisión legal de la política de datos v0.3 (y confirmar que cubre comentarios de redes) | 🛑 bloqueo | 2026-10-17 | abogado | pedir revisión; decidir si se adopta la v1.0 `[p]` |
 | F0 no se publica sin enlace a la política | 🛑 bloqueo | 2026-10-20 | política | se libera con la revisión legal |
-| Gate G3: cerrar Fases 18-20 (19 ítems `[ ]`: 19.1-19.16, 20.1-20.3) | ⏳ por aprobar | 2026-10-21 | usuario | `continuar` con `10-arquitecto` |
+| Gate G3 y cierre: Fases 19-20 (19 ítems `[ ]`: 19.1-19.16, 20.1-20.3) | ⏳ por aprobar | 2026-10-21 | usuario | `continuar` con `10-arquitecto` |
 | Caps. de drama 1.1, 3.2 y 4.1 no aprobados; 8 del mapa §11 en `[p]` | ⏳ por aprobar | 2026-10-17 | usuario | revisar con `50-microdrama-adictivo` |
 | Kapso Pro: si incluye tarifas de Meta, audio y transcripción, y dónde quedan los datos | 📌 compromiso | 2026-10-17 | Kapso | preguntar a Kapso |
 | Plan B de reclutamiento sin pauta (65+ y rurales) | ⏳ por aprobar | 2026-10-21 | Fase 18 | proponer en la Fase 18 |
