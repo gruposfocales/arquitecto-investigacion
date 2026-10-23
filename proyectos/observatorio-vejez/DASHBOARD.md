@@ -52,7 +52,7 @@ sources:
 3. **Para G3:** listos encuesta y grupo focal v1.0 (17-oct); drama D1 v0.3 `[x]` (19-oct; GF en G7b y TikTok después de G7b); díada quitada del diseño y del campo (19-oct), cascada aplicada; podcast, lives, B7, F0 v3 y P2-P3 listos (20-oct); F0 no se publica sin enlace a la política.
 4. **🛑 Política de datos:** v0.3 aprobada (17-oct); falta revisión legal antes de publicarla. `[EVIDENCIA REQUERIDA]`: edades 57/62, umbrales 18/60, corte de 80 años.
 5. **Kapso por probar:** Pro USD 25/mes cotizado (17-oct); falta saber si incluye las tarifas de Meta, audio y transcripción, y dónde quedan los datos.
-6. **`[RIESGO]` reclutamiento sin pauta:** llegar a más de 3.000 personas en el filtro, sobre todo 65+ y rurales, sin publicidad pagada. Plan B pendiente en la Fase 18.
+6. **`[RIESGO]` reclutamiento sin pauta:** llegar a más de 3.000 personas en el filtro, sobre todo 65+ y rurales, sin publicidad pagada. Plan B en `RIESGOS.md` 18.2 y 18.4 (aprobado 17-oct); la contingencia de 18.4 aún menciona díadas, por revisar.
 7. **`[RIESGO]` datos sin anonimizar (13.2, 13.4)** + deuda de 58 ítems de las Fases 0-6 sin detalle en bitácora (fuente única: GitHub).
 8. **Dramas (17-oct):** social listening §12 y diseño de comentarios §13 aprobados · caps. aprobados: 2.1, 2.3, 4.3, 5.3 · no aprobados: 1.1, 3.2, 4.1 · faltan 8 del mapa §11 `[p]` · falta confirmar que la política de datos cubre comentarios de redes.
 
